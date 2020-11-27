@@ -6,4 +6,9 @@ class Guest():
         self.wallet = input_wallet
 
     def pay_entry_fee(self):
-        self.wallet -= 9.95
+        entry_fee = 9.95
+        if self.wallet >= entry_fee:
+            self.wallet -= 9.95
+            return "Welcome to CodeClan Caraoke!"
+        else:
+            return "Cannot afford entry"
