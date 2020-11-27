@@ -60,3 +60,8 @@ class TestRoom(unittest.TestCase):
     def test_remove_guest_from_room(self):
         self.room_2.remove_guest(self.guest_3)
         self.assertEqual(4, len(self.room_2.guests))
+
+    def test_remove_2_guests_from_room(self):
+        self.room_2.remove_guest(self.guest_1)
+        self.room_2.remove_guest(self.guest_5)
+        self.assertEqual(3, len(self.room_2.guests))
