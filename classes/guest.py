@@ -9,6 +9,6 @@ class Guest():
         entry_fee = 9.95
         if self.wallet >= entry_fee:
             self.wallet -= 9.95
-            return "Welcome to CodeClan Caraoke!"
+            return True
         else:
-            return "Cannot afford entry"
+            return False

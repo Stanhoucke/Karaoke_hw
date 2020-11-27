@@ -22,12 +22,12 @@ class TestGuest(unittest.TestCase):
         self.guest_1.pay_entry_fee()
         self.assertEqual(20.05, self.guest_1.wallet)
 
-    def test_pay_entry_fee__greets_paying_guest(self):
-        self.assertEqual("Welcome to CodeClan Caraoke!", self.guest_1.pay_entry_fee())
+    def test_pay_entry_fee__accept_paying_guest(self):
+        self.assertEqual(True, self.guest_1.pay_entry_fee())
 
     def test_pay_entry_fee__rejects_guest_cannot_afford_entry(self):
         self.guest_6.pay_entry_fee()
         self.assertEqual(5.00, self.guest_6.wallet)
-        self.assertEqual("Cannot afford entry", self.guest_6.pay_entry_fee())
+        self.assertEqual(False, self.guest_6.pay_entry_fee())
 
     

@@ -9,9 +9,6 @@ class Room():
     def add_song(self, song):
         self.playlist.append(song)
 
-    def add_guest(self, guest_to_add):
-        self.guests.append(guest_to_add)
-
     def remove_guest(self, guest_to_remove):
         self.guests.remove(guest_to_remove)
 
@@ -20,3 +17,12 @@ class Room():
             return True
         else:
             return False
+
+    def add_guest(self, guest_to_add):
+        # Check guest can afford entry
+        # if guest_to_add.pay_entry_fee():
+            
+        # Check room has capacity
+
+        # Add guest
+        self.guests.append(guest_to_add)
