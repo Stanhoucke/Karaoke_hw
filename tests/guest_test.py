@@ -9,3 +9,6 @@ class TestGuest(unittest.TestCase):
     # Class attribute tests
     def test_guest_has_name(self):
         self.assertEqual("Alice", self.guest_1.name)
+
+    def test_guest_has_age(self):
+        self.assertEqual(38, self.guest_1.age)
