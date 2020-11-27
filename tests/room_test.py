@@ -48,14 +48,14 @@ class TestRoom(unittest.TestCase):
 
     # Methods that affect number of guests in room
     def test_add_guest_to_room(self):
-        self.room_1.add_guest(self.guest_1)
+        self.room_1.add_guest(self.guest_1, self.room_1)
         self.assertEqual(1, len(self.room_1.guests))
     
     def test_add_guest_4_times__returns_guests_len_4(self):
-        self.room_1.add_guest(self.guest_1)
-        self.room_1.add_guest(self.guest_1)
-        self.room_1.add_guest(self.guest_1)
-        self.room_1.add_guest(self.guest_1)
+        self.room_1.add_guest(self.guest_2, self.room_1)
+        self.room_1.add_guest(self.guest_2, self.room_1)
+        self.room_1.add_guest(self.guest_2, self.room_1)
+        self.room_1.add_guest(self.guest_2, self.room_1)
         self.assertEqual(4, len(self.room_1.guests))
     
     def test_remove_guest_from_room(self):

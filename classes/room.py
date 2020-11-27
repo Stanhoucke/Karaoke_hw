@@ -18,11 +18,10 @@ class Room():
         else:
             return False
 
-    def add_guest(self, guest_to_add):
+    def add_guest(self, guest_to_add, room_to_check):
         # Check guest can afford entry
-        # if guest_to_add.pay_entry_fee():
-            
-        # Check room has capacity
-
-        # Add guest
-        self.guests.append(guest_to_add)
+        if guest_to_add.pay_entry_fee():
+            # Check room has capacity
+            if room_to_check.check_capacity(room_to_check):
+                # Add guest
+                self.guests.append(guest_to_add)
