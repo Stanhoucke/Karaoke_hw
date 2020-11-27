@@ -14,6 +14,9 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_age(self):
         self.assertEqual(43, self.guest_1.age)
 
+    def test_guest_has_wallet(self):
+        self.assertEqual(30.00, self.guest_1.wallet)
+
     # Methods that affect wallet
     def test_pay_entry_fee__reduces_amount_in_wallet(self):
         self.guest_1.pay_entry_fee()

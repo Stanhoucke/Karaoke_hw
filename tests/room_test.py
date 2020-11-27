@@ -20,8 +20,8 @@ class TestRoom(unittest.TestCase):
         group_1 = [self.guest_1, self.guest_2, self.guest_3, self.guest_4, self.guest_5]
     
         # Rooms
-        self.room_1 = Room(1)
-        self.room_2 = Room(2)
+        self.room_1 = Room(1, 4)
+        self.room_2 = Room(2, 6)
 
         self.room_2.guests = group_1
 

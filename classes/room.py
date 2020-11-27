@@ -1,9 +1,10 @@
 class Room():
 
-    def __init__(self, input_room_number):
+    def __init__(self, input_room_number, input_capacity):
         self.room_number = input_room_number
         self.playlist = []
         self.guests = []
+        self.capacity = input_capacity
 
     def add_song(self, song):
         self.playlist.append(song)
