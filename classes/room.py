@@ -18,3 +18,5 @@ class Room():
     def check_capacity(self, room_to_check):
         if len(room_to_check.guests) < room_to_check.capacity:
             return True
+        else:
+            return False

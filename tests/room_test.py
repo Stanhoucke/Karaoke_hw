@@ -21,7 +21,7 @@ class TestRoom(unittest.TestCase):
     
         # Rooms
         self.room_1 = Room(1, 4)
-        self.room_2 = Room(2, 6)
+        self.room_2 = Room(2, 5)
 
         self.room_2.guests = group_1
 
@@ -71,3 +71,7 @@ class TestRoom(unittest.TestCase):
     def test_check_capacity_for_under_capacity__returns_True(self):
         has_capacity = self.room_1.check_capacity(self.room_1)
         self.assertEqual(True, has_capacity)
+
+    def test_check_capacity_for_at_capacity__returns_False(self):
+        at_capacity = self.room_2.check_capacity(self.room_2)
+        self.assertEqual(False, at_capacity)
