@@ -14,3 +14,7 @@ class Room():
 
     def remove_guest(self, guest_to_remove):
         self.guests.remove(guest_to_remove)
+
+    def check_capacity(self, room_to_check):
+        if len(room_to_check.guests) < room_to_check.capacity:
+            return True
