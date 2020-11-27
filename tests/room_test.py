@@ -67,6 +67,11 @@ class TestRoom(unittest.TestCase):
         self.room_2.remove_guest(self.guest_5)
         self.assertEqual(3, len(self.room_2.guests))
 
+    def test_add_guest__rejects_guest_cannot_afford_entry(self):
+        self.room_1.add_guest(self.guest_1, self.room_1)
+        self.room_1.add_guest(self.guest_6, self.room_1)
+        self.assertEqual(1, len(self.room_1.guests))
+
     # Methods that check room capacity
     def test_check_capacity_for_under_capacity__returns_True(self):
         has_capacity = self.room_1.check_capacity(self.room_1)
