@@ -23,3 +23,9 @@ class TestRoom(unittest.TestCase):
     def test_song_added_to_playlist(self):
         self.room_1.add_song(self.song_1)
         self.assertEqual(1, len(self.room_1.playlist))
+
+    def test_add_song_3_times__returns_playlist_len_3(self):
+        self.room_1.add_song(self.song_1)
+        self.room_1.add_song(self.song_1)
+        self.room_1.add_song(self.song_1)
+        self.assertEqual(3, len(self.room_1.playlist))
