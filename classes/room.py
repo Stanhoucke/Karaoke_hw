@@ -8,8 +8,8 @@ class Room():
     def add_song(self, song):
         self.playlist.append(song)
 
-    def add_guest(self, guest):
-        self.guests.append(guest)
+    def add_guest(self, guest_to_add):
+        self.guests.append(guest_to_add)
 
-    def remove_guest(self, guest):
-        pass
+    def remove_guest(self, guest_to_remove):
+        self.guests.remove(guest_to_remove)

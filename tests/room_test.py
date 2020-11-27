@@ -6,11 +6,23 @@ from classes.guest import Guest
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
-        self.room_1 = Room(1)
-
+        # Songs
         self.song_1 = Song("Shake It Off", "Taylor Swift", 219)
 
-        self.guest_1 = Guest("Alice", 38)
+        # Guests
+        self.guest_1 = Guest("Alice", 43)
+        self.guest_2 = Guest("Bob", 45)
+        self.guest_3 = Guest("Charlie", 21)
+        self.guest_4 = Guest("David", 17)
+        self.guest_5 = Guest("Emma", 24)
+
+        group_1 = [self.guest_1, self.guest_2, self.guest_3, self.guest_4, self.guest_5]
+    
+        # Rooms
+        self.room_1 = Room(1)
+        self.room_2 = Room(2)
+
+        self.room_2.guests = group_1
 
     # Class attribute tests
     def test_room_has_number(self):
@@ -44,3 +56,7 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_guest(self.guest_1)
         self.room_1.add_guest(self.guest_1)
         self.assertEqual(4, len(self.room_1.guests))
+    
+    def test_remove_guest_from_room(self):
+        self.room_2.remove_guest(self.guest_3)
+        self.assertEqual(4, len(self.room_2.guests))
