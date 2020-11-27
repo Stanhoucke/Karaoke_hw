@@ -25,3 +25,5 @@ class Room():
             if room_to_check.check_capacity(room_to_check):
                 # Add guest
                 self.guests.append(guest_to_add)
+
+    
