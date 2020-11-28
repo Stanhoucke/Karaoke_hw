@@ -53,6 +53,10 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_song(self.song_1)
         self.assertEqual(3, len(self.room_1.playlist))
 
+    def test_favourite_song_on_playlist__returns_message(self):
+        self.room_1.add_song(self.song_3)
+        self.assertEqual("Whoo!", self.room_1.favourite_song_on_playlist(self.guest_1))
+
     # Methods that affect number of guests in room
     def test_add_guest_to_room(self):
         self.room_1.add_guest(self.guest_1, self.room_1)
