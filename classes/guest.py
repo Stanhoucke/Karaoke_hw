@@ -13,3 +13,6 @@ class Guest():
             return True
         else:
             return False
+
+    def pay_for_drink(self, drink_to_buy):
+        self.wallet -= drink_to_buy.price

@@ -2,10 +2,15 @@ import unittest
 from classes.room import Room
 from classes.song import Song
 from classes.guest import Guest
+from classes.drink import Drink
 
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
+        # Drinks
+        self.drink_1 = Drink("Tennents", 3.50, True)
+        self.drink_2 = Drink("Coca Cola", 2.00, False)
+        
         # Songs
         self.song_1 = Song("Shake It Off", "Taylor Swift", 219)
         self.song_2 = Song("Sweet Caroline", "Neil Diamond", 201)
