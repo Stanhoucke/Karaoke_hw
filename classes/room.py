@@ -37,9 +37,10 @@ class Room():
             return False
 
     def favourite_song_on_playlist(self, guest):
-        for song in self.playlist:
-            if song == guest.favourite_song:
-                return "Whoo!"
+        for guest in self.guests:
+            for song in self.playlist:
+                if song == guest.favourite_song:
+                    return "Whoo!"
         return None
 
     def play_song(self):
