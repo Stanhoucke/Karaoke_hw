@@ -66,6 +66,12 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_song(self.song_4)
         self.assertIsNone(self.room_1.favourite_song_on_playlist(self.guest_1))
 
+    def test_play_song__removes_played_song(self):
+        playlist_1 = [self.song_1, self.song_2, self.song_3]
+        self.room_1.playlist = playlist_1
+        self.assertEqual("Now playing: Shake It Off by Taylor Swift", self.room_1.play_song(self.song_1))
+        self.assertEqual(2, len(self.room_1.playlist))
+
     # Methods that affect number of guests in room
     def test_add_guest_to_room(self):
         self.room_1.add_guest(self.guest_1, self.room_1)

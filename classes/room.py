@@ -43,8 +43,10 @@ class Room():
                     return "Whoo!"
         return None
 
-    def play_song(self):
-        pass
+    def play_song(self, song_playing):
+        self.playlist.remove(song_playing)
+        return f"Now playing: {song_playing.song_title} by {song_playing.artist_name}"
+        
 
     def add_guest(self, guest_to_add, room_to_check):
         # Check room has capacity
