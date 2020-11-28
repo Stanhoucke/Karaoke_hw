@@ -94,4 +94,11 @@ class TestRoom(unittest.TestCase):
 
     # Methods that affect tab
     def test_add_drink_to_tab__adds_drink_price_to_tab(self):
-        pass
+        self.room_1.add_drink_to_tab(self.guest_2, self.drink_1)
+        self.assertEqual(3.50, self.room_1.tab)
+        self.assertEqual(56.50, self.guest_2.wallet)
+
+    def test_add_entry_fee_to_tab__adds_entry_fee_to_tab(self):
+        self.room_1.add_entry_fee_to_tab(self.guest_2)
+        self.assertEqual(9.95, self.room_1.tab)
+        self.assertEqual(50.05, self.guest_2.wallet)

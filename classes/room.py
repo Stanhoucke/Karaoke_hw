@@ -30,11 +30,14 @@ class Room():
     def clear_tab(self):
         pass
 
-    def add_drink_to_tab(self, drink_to_buy):
-        pass
+    def add_drink_to_tab(self, buying_guest, drink_to_buy):
+        if buying_guest.pay_for_drink(drink_to_buy):
+            self.tab += drink_to_buy.price
 
-    def add_entry_fee_to_tab(self):
-        pass
+    def add_entry_fee_to_tab(self, guest):
+        entry_fee = 9.95
+        if guest.pay_entry_fee():
+            self.tab += entry_fee
 
     def refund_guest(self):
         pass

@@ -9,7 +9,7 @@ class Guest():
     def pay_entry_fee(self):
         entry_fee = 9.95
         if self.wallet >= entry_fee:
-            self.wallet -= 9.95
+            self.wallet -= entry_fee
             return True
         else:
             return False
