@@ -8,14 +8,16 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         # Songs
         self.song_1 = Song("Shake It Off", "Taylor Swift", 219)
+        self.song_2 = Song("Sweet Caroline", "Neil Diamond", 201)
+        self.song_3 = Song("YMCA", "Village People", 287)
 
         # Guests
-        self.guest_1 = Guest("Alice", 43, 30.00)
-        self.guest_2 = Guest("Bob", 45, 60.00)
-        self.guest_3 = Guest("Charlie", 21, 15.50)
-        self.guest_4 = Guest("David", 17, 10.00)
-        self.guest_5 = Guest("Emma", 24, 29.95)
-        self.guest_6 = Guest("Freddie", 31, 5.00)
+        self.guest_1 = Guest("Alice", 43, 30.00, self.song_3)
+        self.guest_2 = Guest("Bob", 45, 60.00, self.song_3)
+        self.guest_3 = Guest("Charlie", 21, 15.50, self.song_3)
+        self.guest_4 = Guest("David", 17, 10.00, self.song_2)
+        self.guest_5 = Guest("Emma", 24, 29.95, self.song_2)
+        self.guest_6 = Guest("Freddie", 31, 5.00, self.song_1)
 
         group_1 = [self.guest_1, self.guest_2, self.guest_3, self.guest_4, self.guest_5]
     

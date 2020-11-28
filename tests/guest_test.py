@@ -1,11 +1,18 @@
 import unittest
 from classes.guest import Guest
+from classes.song import Song
 
 class TestGuest(unittest.TestCase):
 
     def setUp(self):
-        self.guest_1 = Guest("Alice", 43, 30.00)
-        self.guest_6 = Guest("Freddie", 31, 5.00)
+        # Songs
+        self.song_1 = Song("Shake It Off", "Taylor Swift", 219)
+        self.song_2 = Song("Sweet Caroline", "Neil Diamond", 201)
+        self.song_3 = Song("YMCA", "Village People", 287)
+
+        # Guests
+        self.guest_1 = Guest("Alice", 43, 30.00, self.song_3)
+        self.guest_6 = Guest("Freddie", 31, 5.00, self.song_1)
 
     # Class attribute tests
     def test_guest_has_name(self):
