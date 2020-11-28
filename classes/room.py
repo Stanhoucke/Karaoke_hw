@@ -43,9 +43,11 @@ class Room():
                     return "Whoo!"
         return None
 
-    def play_song(self, song_playing):
-        self.playlist.remove(song_playing)
-        return f"Now playing: {song_playing.song_title} by {song_playing.artist_name}"
+    def play_song(self, playlist):
+        song_title = self.playlist[0].song_title
+        artist_name = self.playlist[0].artist_name
+        self.playlist.pop(0)
+        return f"Now playing: {song_title} by {artist_name}"
         
 
     def add_guest(self, guest_to_add, room_to_check):
