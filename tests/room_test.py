@@ -10,7 +10,7 @@ class TestRoom(unittest.TestCase):
         # Drinks
         self.drink_1 = Drink("Tennents", 3.50, True)
         self.drink_2 = Drink("Coca Cola", 2.00, False)
-        
+
         # Songs
         self.song_1 = Song("Shake It Off", "Taylor Swift", 219)
         self.song_2 = Song("Sweet Caroline", "Neil Diamond", 201)
@@ -91,3 +91,7 @@ class TestRoom(unittest.TestCase):
     def test_check_capacity_for_at_capacity__returns_False(self):
         at_capacity = self.room_2.check_capacity(self.room_2)
         self.assertEqual(False, at_capacity)
+
+    # Methods that affect tab
+    def test_add_drink_to_tab__adds_drink_price_to_tab(self):
+        pass

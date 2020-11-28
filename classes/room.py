@@ -5,6 +5,7 @@ class Room():
         self.playlist = []
         self.guests = []
         self.capacity = input_capacity
+        self.tab = 0.00
 
     def add_song(self, song):
         self.playlist.append(song)
@@ -25,5 +26,20 @@ class Room():
             if room_to_check.check_capacity(room_to_check):
                 # Add guest
                 self.guests.append(guest_to_add)
+
+    def clear_tab(self):
+        pass
+
+    def add_drink_to_tab(self, drink_to_buy):
+        pass
+
+    def add_entry_fee_to_tab(self):
+        pass
+
+    def refund_guest(self):
+        pass
+
+    def play_song(self):
+        pass
 
     
