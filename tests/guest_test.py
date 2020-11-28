@@ -17,6 +17,7 @@ class TestGuest(unittest.TestCase):
 
         # Guests
         self.guest_1 = Guest("Alice", 43, 30.00, self.song_3)
+        self.guest_4 = Guest("David", 17, 10.00, self.song_2)
         self.guest_6 = Guest("Freddie", 31, 5.00, self.song_1)
 
     # Class attribute tests
@@ -53,5 +54,10 @@ class TestGuest(unittest.TestCase):
         self.guest_6.pay_for_drink(self.drink_1)
         self.assertEqual(False, self.guest_6.pay_for_drink(self.drink_1))    
         self.assertEqual(1.50, self.guest_6.wallet)
+
+    def test_pay_for_drink__guest_underage_for_alcoholic(self):
+        self.assertEqual(False, self.guest_4.pay_for_drink(self.drink_1))    
+        self.assertEqual(10.00, self.guest_4.wallet)
+
 
     

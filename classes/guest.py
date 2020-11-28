@@ -15,8 +15,10 @@ class Guest():
             return False
 
     def pay_for_drink(self, drink_to_buy):
-        if self.wallet >= drink_to_buy.price:
+        if self.age < 18 and drink_to_buy.alcoholic:
+            return False
+        elif self.wallet < drink_to_buy.price:
+            return False
+        else:
             self.wallet -= drink_to_buy.price
             return True
-        else:
-            return False
