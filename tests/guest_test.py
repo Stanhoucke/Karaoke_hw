@@ -59,5 +59,10 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(False, self.guest_4.pay_for_drink(self.drink_1))    
         self.assertEqual(10.00, self.guest_4.wallet)
 
+    def test_pay_for_drink_underage_nonalcoholic__returns_True(self):
+        self.assertEqual(True, self.guest_4.pay_for_drink(self.drink_2))    
+        self.assertEqual(8.00, self.guest_4.wallet)
+
+
 
     
