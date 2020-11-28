@@ -19,16 +19,10 @@ class Room():
         else:
             return False
 
-    def add_guest(self, guest_to_add, room_to_check):
-        # Check guest can afford entry
-        if guest_to_add.pay_entry_fee():
-            # Check room has capacity
-            if room_to_check.check_capacity(room_to_check):
-                # Add guest
-                self.guests.append(guest_to_add)
-
-    def clear_tab(self):
-        pass
+    def clear_room(self, room_to_clear):
+        room_to_clear.guests.clear()
+        room_to_clear.playlist.clear()
+        room_to_clear.tab = 0.00
 
     def add_drink_to_tab(self, buying_guest, drink_to_buy):
         if buying_guest.pay_for_drink(drink_to_buy):
@@ -38,11 +32,21 @@ class Room():
         entry_fee = 9.95
         if guest.pay_entry_fee():
             self.tab += entry_fee
+            return True
+        else:
+            return False
 
-    def refund_guest(self):
+    def favourite_song_on_playlist(self):
         pass
 
     def play_song(self):
         pass
 
+    def add_guest(self, guest_to_add, room_to_check):
+        # Check room has capacity
+        if room_to_check.check_capacity(room_to_check):
+            # Check guest can afford entry
+            if self.add_entry_fee_to_tab(guest_to_add):
+                # Add guest
+                self.guests.append(guest_to_add)
     

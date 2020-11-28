@@ -102,3 +102,17 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_entry_fee_to_tab(self.guest_2)
         self.assertEqual(9.95, self.room_1.tab)
         self.assertEqual(50.05, self.guest_2.wallet)
+
+    def test_clear_room__removes_guests_playlist_tab(self):
+        self.room_1.add_guest(self.guest_2, self.room_1)
+        self.assertEqual(1, len(self.room_1.guests))
+        self.assertEqual(9.95, self.room_1.tab)
+        self.assertEqual(50.05, self.guest_2.wallet)
+
+        self.room_1.add_song(self.song_1)
+        self.assertEqual(1, len(self.room_1.playlist))
+
+        self.room_1.clear_room(self.room_1)
+        self.assertEqual(0, len(self.room_1.guests))
+        self.assertEqual(0, len(self.room_1.playlist))
+        self.assertEqual(0.00, self.room_1.tab)
