@@ -46,7 +46,12 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(False, self.guest_6.pay_entry_fee())
 
     def test_pay_for_drink__removes_money_from_wallet(self):
-        self.guest_6.pay_for_drink(self.drink_2)
+        self.assertEqual(True, self.guest_6.pay_for_drink(self.drink_2))
         self.assertEqual(3.00, self.guest_6.wallet)
+
+    def test_pay_for_drink__cannot_afford_drink(self):
+        self.guest_6.pay_for_drink(self.drink_1)
+        self.assertEqual(False, self.guest_6.pay_for_drink(self.drink_1))    
+        self.assertEqual(1.50, self.guest_6.wallet)
 
     
